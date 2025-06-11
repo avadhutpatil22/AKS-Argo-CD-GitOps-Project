@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/YOUR_USERNAME/aks-argo-helm-project'
+    repoURL: 'https://github.com/avadhutpatil22/AKS-Argo-CD-GitOps-Project.git'
     targetRevision: main
-    path: helm-chart
+    path: node-app
     helm:
       valueFiles:
         - values.yaml
