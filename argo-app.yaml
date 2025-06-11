@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: node-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/avadhutpatil22/AKS-Argo-CD-GitOps-Project.git'
+    targetRevision: main
+    path: node-app
+    helm:
+      valueFiles:
+      - values.yaml
+  destination:
+    server: 'cka-dns-mx3m6bny.hcp.centralindia.azmk8s.io'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
